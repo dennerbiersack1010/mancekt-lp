@@ -69,12 +69,12 @@ body {
   opacity: 0.7;
 }
 
-/* Header Button "Quero conversar" (Solid Gradient Background) */
+/* Header Button "Quero conversar" (Solid Black Background) */
 .header-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(90deg, #851de0, #f0007b);
+  background-color: var(--color-text-dark); /* Solid Black Background */
   color: #ffffff;
   border: none;
   border-radius: 30px;
@@ -84,14 +84,14 @@ body {
   font-weight: 600;
   letter-spacing: 0.04em;
   text-decoration: none;
-  box-shadow: 0 4px 15px rgba(133, 29, 224, 0.15);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
   transition: var(--transition-smooth);
 }
 
 .header-btn:hover {
+  background: linear-gradient(90deg, #851de0, #f0007b); /* Gradient on Hover */
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(133, 29, 224, 0.35);
-  filter: brightness(1.05);
+  box-shadow: 0 6px 20px rgba(133, 29, 224, 0.3);
 }
 
 .header-btn:active {
@@ -242,7 +242,137 @@ body {
 .cta-container { animation-delay: 0.6s; }
 
 
-/* RESPONSIVENESS RULES */
+/* ==========================================================================
+   STATISTICS & FEATURES SECTION (BELOW HERO)
+   ========================================================================== */
+
+.stats-section {
+  width: 100%;
+  padding: 110px 8% 120px 8%;
+  background-color: var(--bg-card);
+  /* Faded statue overlay: blends the clean bg image with a high opacity solid tint */
+  background-image: 
+    linear-gradient(rgba(241, 241, 242, 0.88), rgba(241, 241, 242, 0.90)), 
+    url('bg-clean.png');
+  background-size: cover;
+  background-position: right center;
+  background-repeat: no-repeat;
+  border-bottom: 25px solid #e2e1e3; /* Marble-like thick ledge at the bottom */
+  position: relative;
+}
+
+.stats-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+.stat-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 15px;
+  cursor: default;
+}
+
+/* Decorative Vertical Dividers between columns */
+.column-divider {
+  width: 1px;
+  background-color: rgba(0, 0, 0, 0.08);
+  margin: 15px 0;
+  align-self: stretch;
+}
+
+/* Icon Container with Circle Diagram details */
+.stat-icon-container {
+  position: relative;
+  width: 90px;
+  height: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.decor-circle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.stat-icon {
+  color: var(--color-text-dark);
+  z-index: 2;
+  transition: var(--transition-smooth);
+}
+
+/* Micro-interaction on column hover */
+.stat-column:hover .decor-circle {
+  transform: rotate(90deg); /* Concentric circles rotate on hover */
+}
+
+.stat-column:hover .stat-icon {
+  transform: scale(1.1);
+  color: #851de0; /* Highlight color match */
+}
+
+/* Typography for Stats Header */
+.stat-number {
+  font-family: var(--font-title);
+  font-size: 46px;
+  font-weight: 400;
+  color: var(--color-text-dark);
+  margin-bottom: 18px;
+  letter-spacing: -0.01em;
+}
+
+/* Horizontal Line divider with dot */
+.stat-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  margin-bottom: 22px;
+}
+
+.stat-divider .divider-line {
+  flex-grow: 1;
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.08);
+}
+
+.stat-divider .divider-dot {
+  width: 3.5px;
+  height: 3.5px;
+  background-color: var(--color-text-dark);
+  border-radius: 50%;
+  margin: 0 8px;
+}
+
+/* Descriptive Text */
+.stat-text {
+  font-family: var(--font-text);
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--color-text-gray);
+  font-weight: 400;
+}
+
+.stat-text p {
+  margin: 0;
+}
+
+
+/* ==========================================================================
+   RESPONSIVENESS RULES
+   ========================================================================== */
 
 /* Tablets & Small Desktops */
 @media (max-width: 1024px) {
@@ -266,6 +396,14 @@ body {
   
   .hero-description {
     margin-bottom: 35px;
+  }
+  
+  .stats-section {
+    padding: 80px 6% 90px 6%;
+  }
+  
+  .stat-number {
+    font-size: 38px;
   }
 }
 
@@ -315,12 +453,43 @@ body {
     padding: 14px 20px;
   }
   
-  /* Update background-image inside media queries for mobile */
   .cta-button {
     background-image: linear-gradient(rgba(241, 241, 242, 0.95), rgba(241, 241, 242, 0.95)), linear-gradient(90deg, #851de0, #f0007b);
   }
   
   .cta-button:hover {
     background-image: linear-gradient(90deg, #851de0, #f0007b);
+  }
+  
+  /* Stats Section Mobile stack */
+  .stats-section {
+    padding: 70px 25px 80px 25px;
+    border-bottom-width: 15px;
+  }
+  
+  .stats-container {
+    flex-direction: column;
+    gap: 50px;
+  }
+  
+  .stat-column {
+    padding: 0;
+  }
+  
+  .column-divider {
+    width: 60px;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.08);
+    margin: 10px auto;
+    align-self: center;
+  }
+  
+  .stat-number {
+    font-size: 36px;
+    margin-bottom: 12px;
+  }
+  
+  .stat-divider {
+    margin-bottom: 15px;
   }
 }
