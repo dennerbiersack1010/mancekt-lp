@@ -261,9 +261,9 @@ body {
   */
   background-image: 
     linear-gradient(180deg, rgba(241, 241, 242, 1) 0%, rgba(241, 241, 242, 0.88) 15%, rgba(241, 241, 242, 0.90) 80%, rgba(241, 241, 242, 1) 100%), 
-    url('bg-clean.png');
+    url('bg-clean-mirrored.png');
   background-size: cover;
-  background-position: right center;
+  background-position: left center;
   background-repeat: no-repeat;
   border-bottom: 25px solid #e2e1e3; /* Marble-like thick ledge at the bottom */
   position: relative;
@@ -501,8 +501,8 @@ body {
     border-bottom-width: 15px;
     background-image: 
       linear-gradient(180deg, rgba(241, 241, 242, 1) 0%, rgba(241, 241, 242, 0.92) 15%, rgba(241, 241, 242, 0.92) 85%, rgba(241, 241, 242, 1) 100%), 
-      url('bg-clean.png');
-    background-position: 75% center;
+      url('bg-clean-mirrored.png');
+    background-position: 25% center;
   }
   
   .stats-container {
