@@ -1,0 +1,11 @@
+.vercel
+.DS_Store
+*.log
+scratch/
+*.png.bak
+mask.png
+bg-clean-ns.png
+bg-clean-telea.png
+bg-clean-ns-dilated.png
+bg-clean-telea-dilated.png
+imagem-hero-referencia.png

@@ -1,0 +1,297 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Outfit:wght@300;400;500;600&display=swap');
+
+:root {
+  --bg-card: #f1f1f2;
+  --font-title: 'Outfit', sans-serif;
+  --font-text: 'Outfit', sans-serif;
+  --font-brand: 'Montserrat', sans-serif;
+  
+  --color-text-dark: #111111;
+  --color-text-gray: #4a4a4a;
+  --color-text-light: #7a7a7a;
+  --border-color: rgba(0, 0, 0, 0.8);
+  
+  --transition-smooth: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--bg-card);
+  font-family: var(--font-text);
+  overflow-x: hidden;
+}
+
+/* Full Screen Hero Section */
+.hero-section {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--bg-card);
+  background-image: url('bg-clean.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 60px 8% 80px 8%; /* Generous percentage padding for a modern, fluid layout */
+  position: relative;
+}
+
+/* Top Header */
+.hero-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+  width: 100%;
+}
+
+.logo {
+  font-family: var(--font-brand);
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  color: var(--color-text-dark);
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+.logo:hover {
+  opacity: 0.7;
+}
+
+/* Interactive 9-dot Menu Button */
+.menu-button {
+  background: none;
+  border: none;
+  width: 22px;
+  height: 22px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3px;
+  cursor: pointer;
+  padding: 0;
+  z-index: 10;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.menu-button .dot {
+  width: 4.5px;
+  height: 4.5px;
+  background-color: var(--color-text-dark);
+  border-radius: 50%;
+  transition: var(--transition-fast);
+}
+
+/* Micro-animations on hover for menu dots */
+.menu-button:hover {
+  transform: rotate(90deg);
+}
+
+.menu-button:hover .dot {
+  background-color: #666;
+}
+
+.menu-button:hover .dot:nth-child(5) {
+  background-color: var(--color-text-dark);
+  transform: scale(1.4);
+}
+
+/* Hero Body Content */
+.hero-body {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  z-index: 5;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.hero-content {
+  max-width: 650px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Category Tag */
+.tag-container {
+  margin-bottom: 30px;
+}
+
+.category-tag {
+  display: inline-block;
+  border: 1px solid var(--border-color);
+  padding: 6px 14px;
+  font-family: var(--font-brand);
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: var(--color-text-dark);
+  border-radius: 1px;
+}
+
+/* Main Heading */
+.hero-title {
+  font-family: var(--font-title);
+  font-size: 56px;
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--color-text-dark);
+  margin-bottom: 30px;
+  letter-spacing: -0.025em;
+}
+
+/* Paragraphs & Description */
+.hero-description {
+  font-family: var(--font-text);
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--color-text-gray);
+  margin-bottom: 40px;
+}
+
+.hero-description p {
+  margin-bottom: 5px;
+}
+
+.hero-description p:last-child {
+  margin-bottom: 0;
+}
+
+.hero-description .highlight-text {
+  font-weight: 600;
+  color: var(--color-text-dark);
+  margin-top: 15px;
+}
+
+/* CTA Button (Slightly smaller, refined size) */
+.cta-container {
+  display: block;
+}
+
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--border-color);
+  padding: 12px 22px 12px 26px; /* Refined smaller padding */
+  text-decoration: none;
+  color: var(--color-text-dark);
+  font-family: var(--font-brand);
+  font-size: 10px; /* Refined smaller font size */
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  border-radius: 1px;
+  transition: var(--transition-smooth);
+  background-color: transparent;
+}
+
+.cta-button span {
+  margin-right: 18px;
+}
+
+.cta-button .arrow-icon {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* CTA Hover Effects */
+.cta-button:hover {
+  background-color: var(--color-text-dark);
+  color: var(--bg-card);
+  border-color: var(--color-text-dark);
+}
+
+.cta-button:hover .arrow-icon {
+  transform: translateX(5px);
+}
+
+/* Entrance Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-content > * {
+  animation: fadeInUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.tag-container { animation-delay: 0.15s; }
+.hero-title { animation-delay: 0.3s; }
+.hero-description { animation-delay: 0.45s; }
+.cta-container { animation-delay: 0.6s; }
+
+
+/* RESPONSIVENESS RULES */
+
+/* Tablets & Small Desktops */
+@media (max-width: 1024px) {
+  .hero-section {
+    padding: 50px 6%;
+    /* Soft overlay to guarantee text legibility on smaller screens */
+    background-image: 
+      linear-gradient(90deg, rgba(241, 241, 242, 0.95) 45%, rgba(241, 241, 242, 0.7) 75%, rgba(241, 241, 242, 0.2) 100%), 
+      url('bg-clean.png');
+    background-position: right 25% center;
+  }
+  
+  .hero-title {
+    font-size: 44px;
+    margin-bottom: 25px;
+  }
+  
+  .tag-container {
+    margin-bottom: 25px;
+  }
+  
+  .hero-description {
+    margin-bottom: 35px;
+  }
+}
+
+/* Mobile Devices */
+@media (max-width: 640px) {
+  .hero-section {
+    padding: 40px 25px;
+    background-image: 
+      linear-gradient(180deg, rgba(241, 241, 242, 0.95) 60%, rgba(241, 241, 242, 0.8) 100%), 
+      url('bg-clean.png');
+    background-position: right 30% bottom;
+  }
+  
+  .hero-title {
+    font-size: 34px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+  }
+  
+  .category-tag {
+    font-size: 8px;
+    padding: 5px 10px;
+  }
+  
+  .hero-description {
+    font-size: 14px;
+    margin-bottom: 30px;
+  }
+  
+  .cta-button {
+    width: 100%;
+    justify-content: space-between;
+    padding: 14px 20px;
+  }
+}
