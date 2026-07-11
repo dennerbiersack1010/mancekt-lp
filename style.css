@@ -42,7 +42,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 60px 8% 80px 8%; /* Generous percentage padding for a modern, fluid layout */
+  padding: 35px 8% 80px 8%; /* Pushed top padding to 35px so Mancekt logo is higher */
   position: relative;
 }
 
@@ -69,41 +69,33 @@ body {
   opacity: 0.7;
 }
 
-/* Interactive 9-dot Menu Button */
-.menu-button {
-  background: none;
+/* Header Button "Quero conversar" (Solid Gradient Background) */
+.header-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(90deg, #851de0, #f0007b);
+  color: #ffffff;
   border: none;
-  width: 22px;
-  height: 22px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 3px;
-  cursor: pointer;
-  padding: 0;
-  z-index: 10;
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  border-radius: 30px;
+  padding: 10px 22px;
+  font-family: var(--font-brand);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(133, 29, 224, 0.15);
+  transition: var(--transition-smooth);
 }
 
-.menu-button .dot {
-  width: 4.5px;
-  height: 4.5px;
-  background-color: var(--color-text-dark);
-  border-radius: 50%;
-  transition: var(--transition-fast);
+.header-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(133, 29, 224, 0.35);
+  filter: brightness(1.05);
 }
 
-/* Micro-animations on hover for menu dots */
-.menu-button:hover {
-  transform: rotate(90deg);
-}
-
-.menu-button:hover .dot {
-  background-color: #666;
-}
-
-.menu-button:hover .dot:nth-child(5) {
-  background-color: var(--color-text-dark);
-  transform: scale(1.4);
+.header-btn:active {
+  transform: translateY(0);
 }
 
 /* Hero Body Content */
@@ -255,7 +247,7 @@ body {
 /* Tablets & Small Desktops */
 @media (max-width: 1024px) {
   .hero-section {
-    padding: 50px 6%;
+    padding: 35px 6% 80px 6%;
     /* Soft overlay to guarantee text legibility on smaller screens */
     background-image: 
       linear-gradient(90deg, rgba(241, 241, 242, 0.95) 45%, rgba(241, 241, 242, 0.7) 75%, rgba(241, 241, 242, 0.2) 100%), 
@@ -280,11 +272,25 @@ body {
 /* Mobile Devices */
 @media (max-width: 640px) {
   .hero-section {
-    padding: 40px 25px;
+    padding: 30px 25px 40px 25px;
     background-image: 
       linear-gradient(180deg, rgba(241, 241, 242, 0.95) 60%, rgba(241, 241, 242, 0.8) 100%), 
       url('bg-clean.png');
     background-position: right 30% bottom;
+  }
+  
+  .hero-header {
+    flex-direction: row;
+    gap: 15px;
+  }
+  
+  .logo {
+    font-size: 16px;
+  }
+  
+  .header-btn {
+    padding: 8px 16px;
+    font-size: 10px;
   }
   
   .hero-title {
@@ -309,7 +315,7 @@ body {
     padding: 14px 20px;
   }
   
-  /* Update background-image on hover inside media queries to use mobile linear gradient fallback */
+  /* Update background-image inside media queries for mobile */
   .cta-button {
     background-image: linear-gradient(rgba(241, 241, 242, 0.95), rgba(241, 241, 242, 0.95)), linear-gradient(90deg, #851de0, #f0007b);
   }
