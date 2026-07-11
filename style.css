@@ -174,7 +174,7 @@ body {
   margin-top: 15px;
 }
 
-/* CTA Button (Slightly smaller, refined size) */
+/* CTA Button (Gradient Border, Gradient Text, Pill shape) */
 .cta-container {
   display: block;
 }
@@ -182,36 +182,50 @@ body {
 .cta-button {
   display: inline-flex;
   align-items: center;
-  border: 1px solid var(--border-color);
-  padding: 12px 22px 12px 26px; /* Refined smaller padding */
   text-decoration: none;
-  color: var(--color-text-dark);
   font-family: var(--font-brand);
-  font-size: 10px; /* Refined smaller font size */
+  font-size: 11px;
   font-weight: 600;
-  letter-spacing: 0.08em;
-  border-radius: 1px;
+  letter-spacing: 0.04em;
+  padding: 12px 24px 12px 28px;
+  
+  /* Gradient border with border-radius trick */
+  border: 1.5px solid transparent;
+  border-radius: 30px; /* Pill shape matching the screenshot */
+  background-image: linear-gradient(var(--bg-card), var(--bg-card)), linear-gradient(90deg, #851de0, #f0007b);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  
   transition: var(--transition-smooth);
-  background-color: transparent;
 }
 
 .cta-button span {
   margin-right: 18px;
+  background: linear-gradient(90deg, #851de0, #f0007b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  transition: var(--transition-fast);
 }
 
 .cta-button .arrow-icon {
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), stroke 0.25s ease;
 }
 
 /* CTA Hover Effects */
 .cta-button:hover {
-  background-color: var(--color-text-dark);
-  color: var(--bg-card);
-  border-color: var(--color-text-dark);
+  background-image: linear-gradient(90deg, #851de0, #f0007b);
+  background-clip: border-box;
+  border-color: transparent;
+}
+
+.cta-button:hover span {
+  -webkit-text-fill-color: #ffffff;
 }
 
 .cta-button:hover .arrow-icon {
   transform: translateX(5px);
+  stroke: #ffffff; /* Turn arrow white on hover */
 }
 
 /* Entrance Animations */
@@ -293,5 +307,14 @@ body {
     width: 100%;
     justify-content: space-between;
     padding: 14px 20px;
+  }
+  
+  /* Update background-image on hover inside media queries to use mobile linear gradient fallback */
+  .cta-button {
+    background-image: linear-gradient(rgba(241, 241, 242, 0.95), rgba(241, 241, 242, 0.95)), linear-gradient(90deg, #851de0, #f0007b);
+  }
+  
+  .cta-button:hover {
+    background-image: linear-gradient(90deg, #851de0, #f0007b);
   }
 }
