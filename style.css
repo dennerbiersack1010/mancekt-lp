@@ -35,7 +35,10 @@ body {
   width: 100%;
   min-height: 100vh;
   background-color: var(--bg-card);
-  background-image: url('bg-clean.png');
+  /* Smooth linear gradient at the bottom (80% to 100%) to fade the statue cut-off into the background */
+  background-image: 
+    linear-gradient(180deg, rgba(241, 241, 242, 0) 80%, rgba(241, 241, 242, 1) 100%), 
+    url('bg-clean.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -248,11 +251,16 @@ body {
 
 .stats-section {
   width: 100%;
-  padding: 110px 8% 120px 8%;
+  padding: 80px 8% 85px 8%; /* Reduced padding from 110px/120px to 80px/85px to decrease section size */
   background-color: var(--bg-card);
-  /* Faded statue overlay: blends the clean bg image with a high opacity solid tint */
+  /* 
+     Statue background with double linear gradient fade:
+     - Top fade (rgba(...) 0% to 15%): smoothly transitions from solid #f1f1f2 (bottom of hero) into the statue.
+     - Bottom fade (rgba(...) 85% to 100%): smoothly blends the flat bottom cut-off of the statue into solid #f1f1f2.
+     This completely removes any "corte quadrado seco" (dry square cut)!
+  */
   background-image: 
-    linear-gradient(rgba(241, 241, 242, 0.88), rgba(241, 241, 242, 0.90)), 
+    linear-gradient(180deg, rgba(241, 241, 242, 1) 0%, rgba(241, 241, 242, 0.88) 15%, rgba(241, 241, 242, 0.90) 80%, rgba(241, 241, 242, 1) 100%), 
     url('bg-clean.png');
   background-size: cover;
   background-position: right center;
@@ -275,7 +283,7 @@ body {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 0 15px;
+  padding: 0 10px;
   cursor: default;
 }
 
@@ -283,19 +291,19 @@ body {
 .column-divider {
   width: 1px;
   background-color: rgba(0, 0, 0, 0.08);
-  margin: 15px 0;
+  margin: 10px 0;
   align-self: stretch;
 }
 
-/* Icon Container with Circle Diagram details */
+/* Icon Container (Reduced from 90px to 75px to scale down section info) */
 .stat-icon-container {
   position: relative;
-  width: 90px;
-  height: 90px;
+  width: 75px;
+  height: 75px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 30px;
+  margin-bottom: 22px;
 }
 
 .decor-circle {
@@ -313,6 +321,12 @@ body {
   transition: var(--transition-smooth);
 }
 
+/* Scale down SVG size */
+.stat-icon svg {
+  width: 26px;
+  height: 26px;
+}
+
 /* Micro-interaction on column hover */
 .stat-column:hover .decor-circle {
   transform: rotate(90deg); /* Concentric circles rotate on hover */
@@ -323,23 +337,23 @@ body {
   color: #851de0; /* Highlight color match */
 }
 
-/* Typography for Stats Header */
+/* Typography for Stats Header (Reduced from 46px to 38px to scale down info) */
 .stat-number {
   font-family: var(--font-title);
-  font-size: 46px;
+  font-size: 38px;
   font-weight: 400;
   color: var(--color-text-dark);
-  margin-bottom: 18px;
-  letter-spacing: -0.01em;
+  margin-bottom: 12px;
+  letter-spacing: -0.015em;
 }
 
-/* Horizontal Line divider with dot */
+/* Horizontal Line divider with dot (Reduced width from 100px to 80px) */
 .stat-divider {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100px;
-  margin-bottom: 22px;
+  width: 80px;
+  margin-bottom: 18px;
 }
 
 .stat-divider .divider-line {
@@ -349,18 +363,18 @@ body {
 }
 
 .stat-divider .divider-dot {
-  width: 3.5px;
-  height: 3.5px;
+  width: 3px;
+  height: 3px;
   background-color: var(--color-text-dark);
   border-radius: 50%;
-  margin: 0 8px;
+  margin: 0 6px;
 }
 
-/* Descriptive Text */
+/* Descriptive Text (Reduced from 13px to 12.5px) */
 .stat-text {
   font-family: var(--font-text);
-  font-size: 13px;
-  line-height: 1.5;
+  font-size: 12.5px;
+  line-height: 1.55;
   color: var(--color-text-gray);
   font-weight: 400;
 }
@@ -399,22 +413,27 @@ body {
   }
   
   .stats-section {
-    padding: 80px 6% 90px 6%;
+    padding: 60px 6% 70px 6%;
   }
   
   .stat-number {
-    font-size: 38px;
+    font-size: 32px;
   }
 }
 
 /* Mobile Devices */
 @media (max-width: 640px) {
+  /* 
+     Mobile Hero:
+     - Center-aligns all text, tag, and button.
+     - Places the background image at 75% center with an overlay, framing the statue beautifully behind the text.
+  */
   .hero-section {
     padding: 30px 25px 40px 25px;
     background-image: 
-      linear-gradient(180deg, rgba(241, 241, 242, 0.95) 60%, rgba(241, 241, 242, 0.8) 100%), 
+      linear-gradient(180deg, rgba(241, 241, 242, 0.6) 0%, rgba(241, 241, 242, 0.94) 70%, rgba(241, 241, 242, 1) 100%), 
       url('bg-clean.png');
-    background-position: right 30% bottom;
+    background-position: 75% center; /* Frame statue behind the centered content */
   }
   
   .hero-header {
@@ -431,6 +450,19 @@ body {
     font-size: 10px;
   }
   
+  .hero-body {
+    justify-content: center; /* Center body content horizontally */
+  }
+  
+  .hero-content {
+    align-items: center; /* Center align items */
+    text-align: center; /* Center align text */
+  }
+  
+  .tag-container, .cta-container {
+    align-self: center; /* Guarantee horizontal centering */
+  }
+  
   .hero-title {
     font-size: 34px;
     line-height: 1.2;
@@ -445,11 +477,13 @@ body {
   .hero-description {
     font-size: 14px;
     margin-bottom: 30px;
+    text-align: center;
   }
   
   .cta-button {
-    width: 100%;
-    justify-content: space-between;
+    width: auto;
+    min-width: 270px;
+    justify-content: center;
     padding: 14px 20px;
   }
   
@@ -463,13 +497,17 @@ body {
   
   /* Stats Section Mobile stack */
   .stats-section {
-    padding: 70px 25px 80px 25px;
+    padding: 60px 25px 70px 25px;
     border-bottom-width: 15px;
+    background-image: 
+      linear-gradient(180deg, rgba(241, 241, 242, 1) 0%, rgba(241, 241, 242, 0.92) 15%, rgba(241, 241, 242, 0.92) 85%, rgba(241, 241, 242, 1) 100%), 
+      url('bg-clean.png');
+    background-position: 75% center;
   }
   
   .stats-container {
     flex-direction: column;
-    gap: 50px;
+    gap: 40px;
   }
   
   .stat-column {
@@ -485,11 +523,11 @@ body {
   }
   
   .stat-number {
-    font-size: 36px;
-    margin-bottom: 12px;
+    font-size: 32px;
+    margin-bottom: 10px;
   }
   
   .stat-divider {
-    margin-bottom: 15px;
+    margin-bottom: 12px;
   }
 }
