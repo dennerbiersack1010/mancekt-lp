@@ -371,12 +371,6 @@ body {
   width: 100%;
   padding: 80px 8% 85px 8%;
   background-color: var(--bg-card);
-  background-image: 
-    linear-gradient(180deg, rgba(241, 241, 242, 1) 0%, rgba(241, 241, 242, 0.88) 15%, rgba(241, 241, 242, 0.90) 80%, rgba(241, 241, 242, 1) 100%), 
-    url('bg-clean-mirrored.png');
-  background-size: cover;
-  background-position: left center;
-  background-repeat: no-repeat;
   position: relative;
 }
 
