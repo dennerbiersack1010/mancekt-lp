@@ -237,9 +237,9 @@
         <div class="solucao-dashboard">
           <div class="dash-mock">
             <div class="dash-top">
-              <div class="dash-dot" style="background:#ff5f57"></div>
-              <div class="dash-dot" style="background:#febc2e"></div>
-              <div class="dash-dot" style="background:#28c840"></div>
+              <div class="dash-dot-outline"></div>
+              <div class="dash-dot-outline"></div>
+              <div class="dash-dot-outline"></div>
               <span class="dash-title">PAINEL DE LEADS — SEGUNDA-FEIRA</span>
             </div>
             <div class="dash-metrics">
@@ -297,66 +297,102 @@
       <div class="flow-container">
         <!-- Node 1 -->
         <div class="flow-node">
-          <div class="flow-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+          <div class="flow-icon-container">
+            <svg class="decor-circle" viewBox="0 0 100 100">
+              <circle cx="50" cy="50" r="45" stroke="rgba(0,0,0,0.06)" stroke-width="0.8" fill="none"/>
+              <circle cx="50" cy="50" r="35" stroke="rgba(0,0,0,0.04)" stroke-width="0.8" fill="none" stroke-dasharray="2, 2"/>
             </svg>
+            <div class="flow-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+              </svg>
+            </div>
           </div>
           <h4>Lead Entra</h4>
+          <div class="flow-node-divider">
+            <span class="divider-line"></span><span class="divider-dot"></span><span class="divider-line"></span>
+          </div>
           <p>Visitante acessa a campanha e preenche o formulário de qualificação</p>
         </div>
         
         <!-- Arrow -->
         <div class="flow-arrow">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
             <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
           </svg>
         </div>
 
         <!-- Node 2 -->
         <div class="flow-node highlight">
-          <div class="flow-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/>
+          <div class="flow-icon-container">
+            <svg class="decor-circle" viewBox="0 0 100 100">
+              <circle cx="50" cy="50" r="45" stroke="rgba(0,0,0,0.06)" stroke-width="0.8" fill="none"/>
+              <circle cx="50" cy="50" r="35" stroke="rgba(0,0,0,0.04)" stroke-width="0.8" fill="none" stroke-dasharray="2, 2"/>
             </svg>
+            <div class="flow-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/>
+              </svg>
+            </div>
           </div>
           <h4>IA Analisa</h4>
+          <div class="flow-node-divider">
+            <span class="divider-line"></span><span class="divider-dot"></span><span class="divider-line"></span>
+          </div>
           <p>Inteligência artificial lê o perfil, comportamento e sinais de compra em tempo real</p>
         </div>
 
         <!-- Arrow -->
         <div class="flow-arrow">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
             <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
           </svg>
         </div>
 
         <!-- Node 3 -->
         <div class="flow-node highlight">
-          <div class="flow-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+          <div class="flow-icon-container">
+            <svg class="decor-circle" viewBox="0 0 100 100">
+              <circle cx="50" cy="50" r="45" stroke="rgba(0,0,0,0.06)" stroke-width="0.8" fill="none"/>
+              <circle cx="50" cy="50" r="35" stroke="rgba(0,0,0,0.04)" stroke-width="0.8" fill="none" stroke-dasharray="2, 2"/>
             </svg>
+            <div class="flow-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+              </svg>
+            </div>
           </div>
           <h4>Sistema Classifica</h4>
+          <div class="flow-node-divider">
+            <span class="divider-line"></span><span class="divider-dot"></span><span class="divider-line"></span>
+          </div>
           <p>Pronto para comprar, precisa de nutrição ou fora do perfil. Automático.</p>
         </div>
 
         <!-- Arrow -->
         <div class="flow-arrow">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
             <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
           </svg>
         </div>
 
         <!-- Node 4 -->
         <div class="flow-node">
-          <div class="flow-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/>
+          <div class="flow-icon-container">
+            <svg class="decor-circle" viewBox="0 0 100 100">
+              <circle cx="50" cy="50" r="45" stroke="rgba(0,0,0,0.06)" stroke-width="0.8" fill="none"/>
+              <circle cx="50" cy="50" r="35" stroke="rgba(0,0,0,0.04)" stroke-width="0.8" fill="none" stroke-dasharray="2, 2"/>
             </svg>
+            <div class="flow-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/>
+              </svg>
+            </div>
           </div>
           <h4>Chega Organizado</h4>
+          <div class="flow-node-divider">
+            <span class="divider-line"></span><span class="divider-dot"></span><span class="divider-line"></span>
+          </div>
           <p>Você recebe o lead no painel com perfil completo e próximo passo indicado</p>
         </div>
       </div>
@@ -365,10 +401,16 @@
       <div class="mec-cards-grid">
         <div class="mec-card">
           <h4>O sistema aprende com o tempo</h4>
+          <div class="flow-node-divider" style="justify-content: flex-start; width: 60px; margin-bottom: 15px;">
+            <span class="divider-line"></span><span class="divider-dot"></span><span class="divider-line"></span>
+          </div>
           <p>Cada lead que passa pelo sistema gera dados. Com o tempo, a inteligência artificial passa a reconhecer com precisão quem compra de você, em que momento e por qual razão. Isso não pertence a nenhuma plataforma. Pertence ao seu negócio.</p>
         </div>
         <div class="mec-card">
           <h4>Um ativo único da sua empresa</h4>
+          <div class="flow-node-divider" style="justify-content: flex-start; width: 60px; margin-bottom: 15px;">
+            <span class="divider-line"></span><span class="divider-dot"></span><span class="divider-line"></span>
+          </div>
           <p>O sistema é construído em cima do comportamento de compra do seu cliente específico. Não é um modelo pronto tirado de uma prateleira. Não dá pra copiar. E vai valendo mais a cada dia que opera.</p>
         </div>
       </div>
@@ -395,11 +437,17 @@
         <div class="timeline-card">
           <div class="card-num">01</div>
           <h3>Construção</h3>
+          <div class="flow-node-divider" style="justify-content: flex-start; width: 60px; margin-bottom: 18px;">
+            <span class="divider-line"></span><span class="divider-dot"></span><span class="divider-line"></span>
+          </div>
           <p>Levantamos o seu perfil de cliente ideal, definimos quais sinais mostram que alguém está pronto para comprar, mapeamos a jornada do primeiro contato até a venda e configuramos o sistema que filtra, classifica e entrega cada lead no momento certo. Tudo baseado em dados. Investimento único nessa etapa.</p>
         </div>
         <div class="timeline-card">
           <div class="card-num">02</div>
           <h3>Evolução contínua</h3>
+          <div class="flow-node-divider" style="justify-content: flex-start; width: 60px; margin-bottom: 18px;">
+            <span class="divider-line"></span><span class="divider-dot"></span><span class="divider-line"></span>
+          </div>
           <p>Com o sistema no ar, a gente acompanha, ajusta e melhora diariamente. A inteligência artificial analisa o comportamento dos seus leads em tempo real, a gente interpreta os dados e calibra a estratégia. Quanto mais o sistema opera, mais preciso ele fica. Valor fixo mensal.</p>
         </div>
       </div>
@@ -427,10 +475,16 @@
         <div class="result-cards-wrap">
           <div class="result-number-card">
             <div class="big-gradient-num">10x</div>
+            <div class="flow-node-divider" style="justify-content: flex-start; width: 50px; margin-top: 4px; margin-bottom: 8px;">
+              <span class="divider-line"></span><span class="divider-dot"></span><span class="divider-line"></span>
+            </div>
             <p>de crescimento no faturamento após o sistema entrar em operação</p>
           </div>
           <div class="result-number-card">
             <div class="big-gradient-num">4x</div>
+            <div class="flow-node-divider" style="justify-content: flex-start; width: 50px; margin-top: 4px; margin-bottom: 8px;">
+              <span class="divider-line"></span><span class="divider-dot"></span><span class="divider-line"></span>
+            </div>
             <p>de redução no custo por lead qualificado</p>
           </div>
           <div class="result-highlight-card">
@@ -449,7 +503,7 @@
                     <stop offset="100%" stop-color="#f0007b"/>
                   </linearGradient>
                   <linearGradient id="areagrad" x1="0%" y1="0%" x2="0%" y2="100%">
-                    <stop offset="0%" stop-color="#851de0" stop-opacity="0.18"/>
+                    <stop offset="0%" stop-color="#851de0" stop-opacity="0.08"/>
                     <stop offset="100%" stop-color="#f0007b" stop-opacity="0"/>
                   </linearGradient>
                 </defs>
@@ -458,19 +512,19 @@
                 <line x1="0" y1="80" x2="400" y2="80" stroke="rgba(0,0,0,0.05)" stroke-width="1"/>
                 <line x1="0" y1="40" x2="400" y2="40" stroke="rgba(0,0,0,0.05)" stroke-width="1"/>
                 
-                <line x1="200" y1="10" x2="200" y2="175" stroke="#f0007b" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.6"/>
+                <line x1="200" y1="10" x2="200" y2="175" stroke="#f0007b" stroke-width="1" stroke-dasharray="4,3" opacity="0.4"/>
                 
                 <path d="M0,155 C30,150 60,148 90,145 C120,142 150,140 200,130 C230,90 260,55 290,30 C320,15 350,12 400,10 L400,175 L0,175 Z" fill="url(#areagrad)"/>
-                <path d="M0,155 C30,150 60,148 90,145 C120,142 150,140 200,130 C230,90 260,55 290,30 C320,15 350,12 400,10" fill="none" stroke="url(#linegrad)" stroke-width="2.5" stroke-linecap="round"/>
+                <path d="M0,155 C30,150 60,148 90,145 C120,142 150,140 200,130 C230,90 260,55 290,30 C320,15 350,12 400,10" fill="none" stroke="url(#linegrad)" stroke-width="1.8" stroke-linecap="round"/>
                 
-                <circle cx="0" cy="155" r="3.5" fill="#851de0"/>
-                <circle cx="90" cy="145" r="3.5" fill="#851de0"/>
-                <circle cx="200" cy="130" r="4" fill="#f0007b"/>
-                <circle cx="290" cy="30" r="3.5" fill="#f0007b"/>
-                <circle cx="400" cy="10" r="3.5" fill="#f0007b"/>
+                <circle cx="0" cy="155" r="3" fill="#851de0"/>
+                <circle cx="90" cy="145" r="3" fill="#851de0"/>
+                <circle cx="200" cy="130" r="3.5" fill="#f0007b"/>
+                <circle cx="290" cy="30" r="3" fill="#f0007b"/>
+                <circle cx="400" cy="10" r="3" fill="#f0007b"/>
                 
-                <rect x="148" y="2" width="104" height="18" rx="4" fill="#fff" stroke="rgba(240,0,123,0.3)" stroke-width="1"/>
-                <text x="200" y="14" text-anchor="middle" font-family="Outfit" font-size="9" font-weight="600" fill="#f0007b">Sistema no ar</text>
+                <rect x="148" y="2" width="104" height="18" rx="9" fill="#f1f1f2" stroke="rgba(0,0,0,0.08)" stroke-width="1"/>
+                <text x="200" y="14" text-anchor="middle" font-family="Outfit" font-size="9" font-weight="600" fill="#111111">Sistema no ar</text>
                 
                 <text x="0" y="190" font-family="Outfit" font-size="9" fill="#aaa">Jan</text>
                 <text x="75" y="190" font-family="Outfit" font-size="9" fill="#aaa">Fev</text>
@@ -512,9 +566,9 @@
         <div class="porq-dashboard">
           <div class="dash-full">
             <div class="dash-top">
-              <div class="dash-dot" style="background:#ff5f57"></div>
-              <div class="dash-dot" style="background:#febc2e"></div>
-              <div class="dash-dot" style="background:#28c840"></div>
+              <div class="dash-dot-outline"></div>
+              <div class="dash-dot-outline"></div>
+              <div class="dash-dot-outline"></div>
               <span class="dash-title">VISÃO GERAL DO SISTEMA</span>
             </div>
             <div class="dash-row">
@@ -570,12 +624,15 @@
 
       <div class="oferta-card">
         <h3>Sistema de Marketing Inteligente para Geração e Qualificação de Clientes</h3>
+        <div class="flow-node-divider" style="justify-content: flex-start; width: 100px; margin-bottom: 25px;">
+          <span class="divider-line"></span><span class="divider-dot"></span><span class="divider-line"></span>
+        </div>
         <ul class="oferta-list">
           <li>Mapeamento do seu cliente ideal e do comportamento de compra</li>
           <li>Estratégia de atração baseada em dados do seu mercado</li>
           <li>Jornada do cliente do primeiro contato até a venda</li>
           <li>Inteligência artificial para filtrar, classificar e qualificar cada lead</li>
-          <li>Campanha de tráfego activa e gerenciada</li>
+          <li>Campanha de tráfego ativa e gerenciada</li>
           <li>Dashboards de controle em tempo real</li>
           <li>Acompanhamento diário com ajustes estratégicos contínuos</li>
         </ul>
@@ -595,7 +652,7 @@
           </div>
 
           <div class="guarantee">
-            <p>E se em 30 dias de sistema no ar você não enxergar clareza total sobre quem está entrando, em que etapa está e o que falta para fechar, a gente devolve o valor do primeiro mês. Sem burocracia. Sem questionamento. Você não está apostando no sistema. Você está apostando no crescimento do seu negócio, e a gente assume o risco junto.</p>
+            <p>E se em 30 dias de sistema no ar você não enxergar clareza total sobre quem está entrando, in que etapa está e o que falta para fechar, a gente devolve o valor do primeiro mês. Sem burocracia. Sem questionamento. Você não está apostando no sistema. Você está apostando no crescimento do seu negócio, e a gente assume o risco junto.</p>
           </div>
         </div>
       </div>
