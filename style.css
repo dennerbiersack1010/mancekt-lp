@@ -587,27 +587,196 @@ body {
   background-color: #ffffff;
 }
 
-/* Minimalist outline wireframe dashboard card */
-.dash-mock {
-  background: transparent;
-  border: 1px solid rgba(0, 0, 0, 0.08);
+/* Two-column grid: 45% copy / 55% dashboard */
+.sol-grid {
+  display: grid;
+  grid-template-columns: 45fr 55fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.sol-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.sol-right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* ── Dark dashboard card ── */
+.leads-dashboard {
+  background: #111113;
   border-radius: 20px;
-  padding: 24px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.01);
+  padding: 28px 26px 22px 26px;
+  width: 100%;
+  max-width: 560px;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.18), 0 8px 25px rgba(0,0,0,0.1);
 }
 
-.dash-dot-outline {
-  width: 8px;
-  height: 8px;
+/* header row */
+.ld-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 22px;
+}
+
+.ld-dot {
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
-  border: 1px solid rgba(0, 0, 0, 0.3);
-  display: inline-block;
-  margin-right: 4px;
+  border: 1.5px solid #7c3aed;
+  background: transparent;
+  flex-shrink: 0;
 }
 
-.dash-top {
-  margin-bottom: 20px;
+.ld-title {
+  font-family: var(--font-brand);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  color: rgba(255,255,255,0.55);
 }
+
+/* metric cards grid */
+.ld-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 22px;
+}
+
+.ld-metric {
+  background: #1a1a1f;
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 12px;
+  padding: 14px 12px;
+}
+
+.ld-val {
+  font-family: var(--font-title);
+  font-size: 30px;
+  font-weight: 400;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  margin-bottom: 4px;
+  line-height: 1;
+}
+
+.ld-lbl {
+  font-size: 10px;
+  color: rgba(255,255,255,0.4);
+  font-weight: 300;
+  margin-bottom: 5px;
+}
+
+.ld-change {
+  font-size: 10px;
+  font-weight: 500;
+  color: #9f5bf7;
+}
+
+/* chart label */
+.ld-chart-label {
+  font-size: 10.5px;
+  color: rgba(255,255,255,0.35);
+  margin-bottom: 12px;
+  font-weight: 300;
+}
+
+/* bar chart */
+.ld-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 5px;
+  height: 72px;
+  margin-bottom: 18px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  padding-bottom: 4px;
+}
+
+.ld-bar {
+  flex: 1;
+  border-radius: 3px 3px 0 0;
+  background: rgba(255,255,255,0.08);
+  height: var(--h, 20%);
+  transform-origin: bottom;
+  animation: ldBarGrow 1.2s cubic-bezier(0.16,1,0.3,1) both;
+}
+
+.ld-bar--active {
+  background: linear-gradient(180deg, #9f5bf7 0%, #7c3aed 100%);
+}
+
+@keyframes ldBarGrow {
+  from { transform: scaleY(0); }
+  to   { transform: scaleY(1); }
+}
+
+/* stagger bar animation */
+.ld-bar:nth-child(1)  { animation-delay: 0.05s; }
+.ld-bar:nth-child(2)  { animation-delay: 0.10s; }
+.ld-bar:nth-child(3)  { animation-delay: 0.15s; }
+.ld-bar:nth-child(4)  { animation-delay: 0.20s; }
+.ld-bar:nth-child(5)  { animation-delay: 0.25s; }
+.ld-bar:nth-child(6)  { animation-delay: 0.30s; }
+.ld-bar:nth-child(7)  { animation-delay: 0.35s; }
+.ld-bar:nth-child(8)  { animation-delay: 0.40s; }
+.ld-bar:nth-child(9)  { animation-delay: 0.45s; }
+.ld-bar:nth-child(10) { animation-delay: 0.50s; }
+.ld-bar:nth-child(11) { animation-delay: 0.55s; }
+.ld-bar:nth-child(12) { animation-delay: 0.60s; }
+.ld-bar:nth-child(13) { animation-delay: 0.65s; }
+.ld-bar:nth-child(14) { animation-delay: 0.70s; }
+
+/* footer */
+.ld-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.ld-live {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 10.5px;
+  color: rgba(255,255,255,0.45);
+  font-weight: 300;
+}
+
+.ld-live-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #7c3aed;
+  box-shadow: 0 0 8px rgba(124,58,237,0.8);
+  animation: livePulse 2s ease-in-out infinite;
+}
+
+@keyframes livePulse {
+  0%, 100% { opacity: 1; box-shadow: 0 0 8px rgba(124,58,237,0.8); }
+  50% { opacity: 0.5; box-shadow: 0 0 14px rgba(124,58,237,0.5); }
+}
+
+.ld-campaigns-link {
+  font-size: 10.5px;
+  color: rgba(255,255,255,0.55);
+  font-weight: 400;
+  text-decoration: none;
+  transition: color 0.25s ease;
+  font-family: var(--font-brand);
+  letter-spacing: 0.01em;
+}
+
+.ld-campaigns-link:hover {
+  color: #9f5bf7;
+}
+
 
 .dash-title {
   font-family: var(--font-brand);
