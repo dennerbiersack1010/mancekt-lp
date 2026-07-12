@@ -377,7 +377,6 @@ body {
   background-size: cover;
   background-position: left center;
   background-repeat: no-repeat;
-  border-bottom: 25px solid #e2e1e3;
   position: relative;
 }
 
@@ -495,14 +494,20 @@ body {
 
 .problema-section {
   width: 100%;
-  padding: 120px 8%;
+  padding: 50px 8% 80px 8%;
   background-color: var(--bg-card);
-  background-image: 
-    linear-gradient(90deg, rgba(241, 241, 242, 0.45) 40%, rgba(241, 241, 242, 0.2) 65%, rgba(241, 241, 242, 0.45) 100%), 
-    url('fundo-dobra-3.png');
+  background-image: url('fundo-dobra-3.png');
   background-size: cover;
-  background-position: center;
+  background-position: right -160px;
   background-repeat: no-repeat;
+}
+
+.problema-section .asym-left {
+  max-width: 550px;
+}
+
+.problema-section .asym-right {
+  max-width: 440px;
 }
 
 .cost-box {
@@ -1329,6 +1334,11 @@ body {
   
   .asym-grid {
     gap: 40px;
+  }
+  
+  .problema-section {
+    background-image: none;
+    padding: 60px 6%;
   }
 }
 
