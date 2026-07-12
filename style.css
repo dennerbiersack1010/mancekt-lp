@@ -237,7 +237,7 @@ body {
 }
 
 .hero-content {
-  max-width: 780px;
+  max-width: 660px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -261,20 +261,20 @@ body {
 
 .hero-title {
   font-family: var(--font-title);
-  font-size: 72px;
+  font-size: 58px;
   font-weight: 400;
   line-height: 1.1;
   color: var(--color-text-dark);
-  margin-bottom: 32px;
-  letter-spacing: -0.03em;
+  margin-bottom: 28px;
+  letter-spacing: -0.025em;
 }
 
 .hero-description {
   font-family: var(--font-text);
-  font-size: 17px;
-  line-height: 1.65;
+  font-size: 15px;
+  line-height: 1.6;
   color: var(--color-text-gray);
-  margin-bottom: 44px;
+  margin-bottom: 38px;
 }
 
 .hero-description p {
@@ -369,7 +369,7 @@ body {
 
 .stats-section {
   width: 100%;
-  padding: 80px 8% 85px 8%;
+  padding: 55px 8% 60px 8%;
   background-color: var(--bg-card);
   position: relative;
 }
@@ -401,12 +401,12 @@ body {
 
 .stat-icon-container {
   position: relative;
-  width: 75px;
-  height: 75px;
+  width: 58px;
+  height: 58px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 22px;
+  margin-bottom: 16px;
 }
 
 .decor-circle {
@@ -425,8 +425,8 @@ body {
 }
 
 .stat-icon svg {
-  width: 26px;
-  height: 26px;
+  width: 20px;
+  height: 20px;
 }
 
 .stat-column:hover .decor-circle {
@@ -440,10 +440,10 @@ body {
 
 .stat-number {
   font-family: var(--font-title);
-  font-size: 38px;
+  font-size: 30px;
   font-weight: 400;
   color: var(--color-text-dark);
-  margin-bottom: 12px;
+  margin-bottom: 10px;
   letter-spacing: -0.015em;
 }
 
@@ -471,8 +471,8 @@ body {
 
 .stat-text {
   font-family: var(--font-text);
-  font-size: 12.5px;
-  line-height: 1.55;
+  font-size: 11.5px;
+  line-height: 1.5;
   color: var(--color-text-gray);
   font-weight: 400;
 }
