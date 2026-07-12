@@ -237,7 +237,7 @@ body {
 }
 
 .hero-content {
-  max-width: 650px;
+  max-width: 780px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -250,9 +250,9 @@ body {
 .category-tag {
   display: inline-block;
   border: 1px solid var(--border-color);
-  padding: 6px 14px;
+  padding: 7px 16px;
   font-family: var(--font-brand);
-  font-size: 9px;
+  font-size: 10px;
   font-weight: 500;
   letter-spacing: 0.08em;
   color: var(--color-text-dark);
@@ -261,20 +261,20 @@ body {
 
 .hero-title {
   font-family: var(--font-title);
-  font-size: 56px;
+  font-size: 72px;
   font-weight: 400;
-  line-height: 1.15;
+  line-height: 1.1;
   color: var(--color-text-dark);
-  margin-bottom: 30px;
-  letter-spacing: -0.025em;
+  margin-bottom: 32px;
+  letter-spacing: -0.03em;
 }
 
 .hero-description {
   font-family: var(--font-text);
-  font-size: 15px;
-  line-height: 1.6;
+  font-size: 17px;
+  line-height: 1.65;
   color: var(--color-text-gray);
-  margin-bottom: 40px;
+  margin-bottom: 44px;
 }
 
 .hero-description p {
