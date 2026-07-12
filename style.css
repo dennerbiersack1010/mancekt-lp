@@ -498,7 +498,7 @@ body {
   background-color: var(--bg-card);
   background-image: url('fundo-dobra-3.png');
   background-size: cover;
-  background-position: right -160px;
+  background-position: right top;
   background-repeat: no-repeat;
 }
 
