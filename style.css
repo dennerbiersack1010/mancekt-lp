@@ -495,30 +495,62 @@ body {
 
 .problema-section {
   width: 100%;
-  padding: 100px 8%;
+  padding: 120px 8%;
   background-color: var(--bg-card);
+  background-image: 
+    linear-gradient(90deg, rgba(241, 241, 242, 0.45) 40%, rgba(241, 241, 242, 0.2) 65%, rgba(241, 241, 242, 0.45) 100%), 
+    url('fundo-dobra-3.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .cost-box {
-  background: transparent;
+  background: rgba(255, 255, 255, 0.45);
   border: 1px solid rgba(0, 0, 0, 0.08);
-  border-left: 2px solid var(--color-text-dark);
-  border-radius: 0;
-  padding: 24px 30px;
+  border-radius: 12px;
+  padding: 24px 28px;
   max-width: 100%;
   margin-top: 40px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
-.cost-box p {
-  font-size: 15px;
+.cost-icon-col {
+  flex-shrink: 0;
+}
+
+.cost-icon-circle {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: var(--color-text-dark);
-  line-height: 1.65;
-  margin: 0;
-  font-weight: 300;
+  background: rgba(255, 255, 255, 0.8);
 }
 
-.cost-box strong {
-  font-weight: 500;
+.cost-text-col {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cost-text-col p {
+  font-size: 14px;
+  color: var(--color-text-gray);
+  line-height: 1.6;
+  font-weight: 300;
+  margin: 0;
+}
+
+.cost-text-col p.cost-final {
+  font-weight: 600;
   color: var(--color-text-dark);
 }
 
@@ -1428,7 +1460,12 @@ body {
   }
   
   /* General Sections Padding Mobile */
-  .problema-section, .solucao-section, .mecanismo-section, 
+  .problema-section {
+    background-image: none;
+    padding: 60px 20px;
+  }
+  
+  .solucao-section, .mecanismo-section, 
   .como-section, .resultado-section, .porq-section, 
   .oferta-section, .diag-section, .faq-section, .cta-final-section {
     padding: 60px 20px;
@@ -1443,7 +1480,14 @@ body {
     padding: 28px 20px;
   }
   
-  .cost-box, .anchor-box {
+  .cost-box {
+    padding: 20px;
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+  
+  .anchor-box {
     padding: 20px;
   }
   
