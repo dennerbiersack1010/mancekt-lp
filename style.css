@@ -890,134 +890,218 @@ body {
 
 
 /* ==========================================================================
-   5. MECANISMO SECTION (VERTICAL TIMELINE STACK)
+   5. MECANISMO SECTION (DOBRA 5 - COMO FUNCIONA)
    ========================================================================== */
 
 .mecanismo-section {
   width: 100%;
-  padding: 100px 8%;
+  padding: 120px 8%;
   background-color: var(--bg-card);
-}
-
-.mec-card {
-  padding: 30px;
-  background: transparent;
-  border-radius: 20px;
-  border: 1px solid rgba(0,0,0,0.08);
-  box-shadow: 0 4px 15px rgba(0,0,0,0.01);
-  transition: var(--transition-smooth);
-}
-
-.mec-card:hover {
-  transform: translateY(-2px);
-  border-color: rgba(0, 0, 0, 0.8);
-}
-
-.mec-card h4 {
-  font-family: var(--font-title);
-  font-size: 17px;
-  font-weight: 400;
-  color: var(--color-text-dark);
-}
-
-.mec-card p {
-  font-size: 13.5px;
-  line-height: 1.6;
-  color: var(--color-text-gray);
-  font-weight: 300;
-}
-
-/* Vertical Timeline */
-.vertical-flow {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
+  background-image: url('fundo-dobra-5.png');
+  background-size: cover;
+  background-position: right center;
+  background-repeat: no-repeat;
   position: relative;
-  padding-left: 20px;
-  padding-top: 15px;
 }
 
-.vertical-step {
-  display: flex;
-  gap: 25px;
-  position: relative;
-  padding-bottom: 40px;
-}
-
-.vertical-step:last-child {
-  padding-bottom: 0;
-}
-
-.step-icon-col {
-  display: flex;
-  flex-direction: column;
+/* Grid layout for Dobra 5 (48% copy/cards, 52% flow) */
+.mec-grid {
+  display: grid;
+  grid-template-columns: 48fr 52fr;
+  gap: 80px;
   align-items: center;
-  position: relative;
 }
 
-.step-line {
-  position: absolute;
-  top: 75px;
-  bottom: -15px;
-  width: 1px;
-  background-color: rgba(0, 0, 0, 0.08);
+.mec-left {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-.vertical-step:last-child .step-line {
-  display: none;
+.mec-right {
+  display: flex;
+  justify-content: flex-end;
 }
 
-.step-content-col {
-  padding-top: 15px;
+/* ── Left Interactive Dark Cards ── */
+.mec5-card {
+  background: #111113;
+  border: 1.5px solid transparent;
+  border-radius: 20px;
+  padding: 28px 24px;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  transition: var(--transition-smooth);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+  cursor: pointer;
+  max-width: 520px;
 }
 
-.step-content-col h4 {
-  font-family: var(--font-title);
-  font-size: 17px;
-  font-weight: 500;
-  color: var(--color-text-dark);
-  margin-bottom: 6px;
-}
-
-.step-content-col p {
-  font-size: 13px;
-  line-height: 1.6;
-  color: var(--color-text-gray);
-  font-weight: 300;
-}
-
-.vertical-step.highlight .step-content-col h4 {
-  color: #851de0;
-}
-
-.flow-icon-container {
-  position: relative;
-  width: 75px;
-  height: 75px;
+.mec5-card-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.02);
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 0;
+  color: rgba(255,255,255,0.85);
+  flex-shrink: 0;
+  transition: var(--transition-smooth);
+  box-shadow: inset 0 0 12px rgba(255,255,255,0.02);
 }
 
-.flow-icon {
-  color: var(--color-text-dark);
+.mec5-card-body h4 {
+  font-family: var(--font-title);
+  font-size: 17px;
+  font-weight: 400;
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+.mec5-divider {
+  width: 32px;
+  height: 2px;
+  background: #ffffff;
+  margin-bottom: 14px;
+  opacity: 0.85;
+}
+
+.mec5-card-body p {
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: rgba(255,255,255,0.55);
+  font-weight: 300;
+}
+
+/* Interactive Card Hovers */
+.mec5-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 45px rgba(0,0,0,0.15);
+  border-color: rgba(133, 29, 224, 0.4);
+  background: #151518;
+}
+
+.mec5-card:hover .mec5-card-icon {
+  border-color: #851de0;
+  color: #ffffff;
+  background: linear-gradient(135deg, rgba(133,29,224,0.15) 0%, rgba(240,0,123,0.05) 100%);
+  transform: scale(1.08) rotate(8deg);
+  box-shadow: 0 0 15px rgba(133,29,224,0.25);
+}
+
+
+/* ── Right Vertical Flow Card ── */
+.mec5-flow-card {
+  background: #111113;
+  border-radius: 20px;
+  padding: 40px 36px 36px 36px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.18);
+  display: flex;
+  flex-direction: column;
+}
+
+.mec5-step {
+  display: flex;
+  gap: 22px;
+  position: relative;
+}
+
+.mec5-step-icon-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.mec5-icon-ring {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255,255,255,0.08);
+  background: #111113;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgba(255,255,255,0.45);
+  z-index: 5;
+  transition: var(--transition-smooth);
+}
+
+.mec5-step-line {
+  width: 1.5px;
+  background: rgba(255,255,255,0.08);
+  flex-grow: 1;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  min-height: 52px;
   z-index: 2;
   transition: var(--transition-smooth);
 }
 
-.flow-icon svg {
-  width: 24px;
-  height: 24px;
+/* Active Highlight state for step 2 (IA Analisa) */
+.mec5-icon-ring--active {
+  border-color: #851de0;
+  color: #9f5bf7;
+  background: linear-gradient(135deg, rgba(133,29,224,0.1) 0%, rgba(133,29,224,0.02) 100%);
+  box-shadow: 0 0 18px rgba(133,29,224,0.25);
 }
 
-.vertical-step:hover .decor-circle {
-  transform: rotate(90deg);
+.mec5-h4--active {
+  color: #9f5bf7 !important;
 }
 
-.vertical-step:hover .flow-icon {
-  transform: scale(1.1);
-  color: #851de0;
+.mec5-step-text {
+  padding-top: 4px;
+  padding-bottom: 26px;
+  display: flex;
+  flex-direction: column;
+}
+
+.mec5-step-num {
+  font-family: var(--font-brand);
+  font-size: 11px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.25);
+  letter-spacing: 0.05em;
+  margin-bottom: 4px;
+}
+
+.mec5-step-text h4 {
+  font-family: var(--font-title);
+  font-size: 18px;
+  font-weight: 400;
+  color: #ffffff;
+  margin-bottom: 6px;
+  transition: color 0.3s ease;
+}
+
+.mec5-step-text p {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.45);
+  font-weight: 300;
+  transition: color 0.3s ease;
+}
+
+/* Interactive hover on step row */
+.mec5-step:hover .mec5-icon-ring:not(.mec5-icon-ring--active) {
+  border-color: rgba(255,255,255,0.25);
+  color: rgba(255,255,255,0.85);
+  transform: scale(1.05);
+}
+
+.mec5-step:hover .mec5-step-text p {
+  color: rgba(255,255,255,0.65);
+}
+
+/* Last step adjustments */
+.mec5-step--last .mec5-step-text {
+  padding-bottom: 0;
 }
 
 
@@ -1527,6 +1611,11 @@ body {
     background-image: none;
     padding: 60px 6%;
   }
+
+  .mecanismo-section {
+    background-image: none;
+    padding: 80px 6%;
+  }
 }
 
 /* Medium Devices (Grid Stack point) */
@@ -1548,6 +1637,19 @@ body {
     max-width: 500px;
     margin: 0 auto;
     width: 100%;
+  }
+
+  .mec-grid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .mec5-card, .mec5-flow-card {
+    max-width: 100%;
+  }
+
+  .mec-right {
+    justify-content: center;
   }
 }
 
@@ -1691,5 +1793,22 @@ body {
   .dash-metrics {
     grid-template-columns: 1fr;
     gap: 10px;
+  }
+
+  .mecanismo-section {
+    background-image: none !important;
+  }
+
+  .mec5-card {
+    padding: 22px 18px;
+    gap: 16px;
+  }
+
+  .mec5-flow-card {
+    padding: 30px 20px;
+  }
+
+  .mec5-step {
+    gap: 15px;
   }
 }

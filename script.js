@@ -92,4 +92,44 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  // 5. Dashboard count-up animation for Dobra 4
+  const dashboardVals = document.querySelectorAll(".ld-val");
+  const solucaoSection = document.querySelector(".solucao-section");
+  
+  if (dashboardVals.length > 0 && solucaoSection) {
+    let dashAnimated = false;
+    
+    const startDashCounters = () => {
+      dashboardVals.forEach(val => {
+        const target = parseInt(val.getAttribute("data-target"), 10);
+        let current = 0;
+        const duration = 1200; // 1.2 seconds
+        const steps = duration / 16;
+        const step = target / steps;
+        
+        const countTimer = setInterval(() => {
+          current += step;
+          if (current >= target) {
+            val.textContent = target;
+            clearInterval(countTimer);
+          } else {
+            val.textContent = Math.floor(current);
+          }
+        }, 16);
+      });
+    };
+    
+    const solObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !dashAnimated) {
+          startDashCounters();
+          dashAnimated = true;
+        }
+      });
+    }, { threshold: 0.15 });
+    
+    solObserver.observe(solucaoSection);
+  }
+
 });
+
