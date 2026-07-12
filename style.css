@@ -494,12 +494,15 @@ body {
 
 .problema-section {
   width: 100%;
-  padding: 50px 8% 80px 8%;
+  padding: 100px 8% 120px 8%;
   background-color: var(--bg-card);
   background-image: url('fundo-dobra-3.png');
   background-size: cover;
-  background-position: right top;
+  background-position: right bottom;
   background-repeat: no-repeat;
+  min-height: 740px;
+  display: flex;
+  align-items: center;
 }
 
 .problema-section .asym-left {
